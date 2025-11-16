@@ -11,7 +11,7 @@ services:
       - key: PYTHONUNBUFFERED
         value: "true"
       - key: DATABASE_URL
-        sync: postgresql://postgres:Maidease%40%2312345@db.euxqikjnazjetymepkke.supabase.co:5432/postgres
+        sync: postgresql://postgres:Miadease123rko@db.euxqikjnazjetymepkke.supabase.co:5432/postgres
       - key: SECRET_KEY
         sync: ZXyO1NFtQQvd6uAsSyLwwEQUFbTg9YWjoEKARP3D90M
       - key: CORS_ORIGINS
