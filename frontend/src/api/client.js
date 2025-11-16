@@ -3,6 +3,14 @@ import axios from 'axios';
 // Use environment variable for API URL, fallback to localhost
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
 
+// Log the API URL being used (helpful for debugging)
+console.log('🔗 API URL:', API_URL);
+console.log('📦 Environment:', {
+  VITE_API_URL: import.meta.env.VITE_API_URL,
+  MODE: import.meta.env.MODE,
+  DEV: import.meta.env.DEV,
+});
+
 const api = axios.create({
   baseURL: API_URL,
 });
