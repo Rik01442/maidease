@@ -23,7 +23,7 @@ class Booking(Base):
     service_type = Column(String, nullable=False)
     booking_date = Column(DateTime, nullable=False)
     time_slot = Column(String)
-    status = Column(Enum(BookingStatus), default=BookingStatus.PENDING)
+    status = Column(Enum(BookingStatus, values_callable=lambda x: [e.value for e in x]), default=BookingStatus.PENDING)
     total_amount = Column(Float)
     notes = Column(Text)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
