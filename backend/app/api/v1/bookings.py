@@ -11,7 +11,7 @@ from app.models.user import User
 router = APIRouter(prefix="/bookings", tags=["Bookings"])
 
 
-@router.post("/", response_model=BookingResponse, status_code=status.HTTP_201_CREATED)
+@router.post("", response_model=BookingResponse, status_code=status.HTTP_201_CREATED)
 def create_booking(
     booking_data: BookingCreate,
     current_user: User = Depends(get_current_active_user),

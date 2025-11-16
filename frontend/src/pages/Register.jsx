@@ -29,14 +29,17 @@ export const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+    console.log('🔘 Submit button clicked', formData);
 
     // Validate password match
     if (formData.password !== formData.confirm_password) {
+      console.error('❌ Passwords do not match');
       setError('Passwords do not match');
       return;
     }
 
     setLoading(true);
+    console.log('🔄 Loading set to true, attempting registration...');
 
     try {
       // Build payload with only required fields
@@ -48,14 +51,21 @@ export const Register = () => {
         password: formData.password,
       };
 
+      console.log('📝 Data to send:', dataToSend);
+
       // Use centralized validation
       const validatedData = validateRegistrationPayload(dataToSend);
+      console.log('✅ Validation passed:', validatedData);
 
       console.log('Sending registration data:', validatedData);
+      console.log('🚀 Calling register() function...');
 
-      await register(validatedData);
+      const result = await register(validatedData);
+      console.log('✅ Register returned successfully:', result);
+      
       navigate('/login');
     } catch (err) {
+      console.error('💥 Error caught in try-catch:', err);
       // Handle validation errors
       if (err.message) {
         setError(err.message);
@@ -68,6 +78,7 @@ export const Register = () => {
       }
     } finally {
       setLoading(false);
+      console.log('🔄 Loading set to false');
     }
   };
 

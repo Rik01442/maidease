@@ -11,7 +11,7 @@ from app.models.user import User
 router = APIRouter(prefix="/reviews", tags=["Reviews"])
 
 
-@router.post("/", response_model=ReviewResponse, status_code=status.HTTP_201_CREATED)
+@router.post("", response_model=ReviewResponse, status_code=status.HTTP_201_CREATED)
 def create_review(
     review_data: ReviewCreate,
     current_user: User = Depends(get_current_active_user),

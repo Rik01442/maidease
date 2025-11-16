@@ -11,7 +11,7 @@ from app.models.user import User, UserRole
 router = APIRouter(prefix="/maids", tags=["Maids"])
 
 
-@router.get("/", response_model=List[UserResponse])
+@router.get("", response_model=List[UserResponse])
 def browse_maids(
     skill: Optional[str] = Query(None),
     min_experience: Optional[int] = Query(None),

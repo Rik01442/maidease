@@ -28,7 +28,8 @@ app = FastAPI(
     title=settings.APP_NAME,
     debug=settings.DEBUG,
     docs_url="/docs",
-    redoc_url="/redoc"
+    redoc_url="/redoc",
+    redirect_slashes=False  # Disable trailing slash redirect to preserve CORS headers on redirects
 )
 
 logger.info(f"🚀 Starting {settings.APP_NAME} API")

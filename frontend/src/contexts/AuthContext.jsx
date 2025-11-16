@@ -43,12 +43,16 @@ export const AuthProvider = ({ children }) => {
 
   const register = useCallback(async (userData) => {
     try {
+      console.log('🔐 AuthContext.register() called with:', userData);
       setError(null);
+      console.log('🚀 Calling authAPI.register()...');
       const response = await authAPI.register(userData);
+      console.log('✅ authAPI.register() returned:', response);
       setUser(response.data);
       localStorage.setItem('user', JSON.stringify(response.data));
       return response.data;
     } catch (err) {
+      console.error('❌ Error in register():', err);
       const message = getApiErrorMessage(err);
       setError(message);
       throw err;
