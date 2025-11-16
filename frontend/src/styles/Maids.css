@@ -1,0 +1,239 @@
+.maids-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.maids-container h1 {
+  font-size: 2rem;
+  color: var(--dark-color);
+  margin-bottom: 2rem;
+}
+
+/* Filters Section */
+.filters-section {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.filters-section h3 {
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+  font-size: 1.2rem;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+  font-size: 0.95rem;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.range-inputs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.range-inputs input {
+  flex: 1;
+}
+
+.btn-reset {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  align-self: flex-end;
+}
+
+.btn-reset:hover {
+  background-color: #5a6268;
+}
+
+/* Maids Grid */
+.maids-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.maid-card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.maid-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.maid-header {
+  margin-bottom: 1rem;
+}
+
+.maid-header h3 {
+  font-size: 1.3rem;
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.star {
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.rating-value {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+.maid-bio {
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.maid-details {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+.detail:last-child {
+  border-bottom: none;
+}
+
+.detail .label {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.detail .value {
+  color: var(--secondary-color);
+}
+
+.maid-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.btn-view,
+.btn-book {
+  padding: 0.75rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.btn-view {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-view:hover {
+  background-color: #5a6268;
+}
+
+.btn-book {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-book:hover {
+  background-color: #0056b3;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--secondary-color);
+}
+
+.no-results p {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .maids-container {
+    padding: 0 1rem;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .maids-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .maid-actions {
+    grid-template-columns: 1fr;
+  }
+}
