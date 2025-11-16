@@ -15,4 +15,4 @@ services:
       - key: SECRET_KEY
         sync: false
       - key: CORS_ORIGINS
-        value: "https://maidease-two.vercel.app"
+        value: "https://maidease-two.vercel.app,http://localhost:5173,http://localhost:3000"

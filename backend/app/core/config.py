@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
-    # CORS - allow production and local URLs
+    # CORS - allow production and local URLs (will be overridden by environment)
     BACKEND_CORS_ORIGINS: List[str] = [
         "https://maidease-two.vercel.app",
         "http://localhost:5173",  # For local development
@@ -39,8 +39,9 @@ if cors_env:
     # Handle both comma-separated and single values
     cors_urls = [url.strip() for url in cors_env.split(",") if url.strip()]
     settings.BACKEND_CORS_ORIGINS = cors_urls
-    logger.info(f"Loaded CORS origins from environment: {cors_urls}")
+    logger.info(f"✅ Loaded CORS origins from CORS_ORIGINS env var: {cors_urls}")
 else:
-    logger.warning("CORS_ORIGINS environment variable not set, using defaults")
+    logger.warning("⚠️  CORS_ORIGINS environment variable not set, using defaults: {settings.BACKEND_CORS_ORIGINS}")
 
-logger.info(f"Final CORS origins: {settings.BACKEND_CORS_ORIGINS}")
+logger.info(f"🔐 Final CORS origins configured: {settings.BACKEND_CORS_ORIGINS}")
+
